@@ -75,9 +75,9 @@ class Mail:
         if _to:
             msg.add_header('To', ','.join(_to))
         if _cc:
-            msg.add_header('To', ','.join(_cc))
+            msg.add_header('Cc', ','.join(_cc))
         if _bcc:
-            msg.add_header('To', ','.join(_bcc))
+            msg.add_header('Bcc', ','.join(_bcc))
         self.smtp.sendmail(
             from_addr=_from, to_addrs=_to + _cc + _bcc, msg=msg.as_string()
         )
